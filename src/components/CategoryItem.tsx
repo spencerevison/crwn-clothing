@@ -3,7 +3,7 @@ import { ICategory } from "./Directory";
 export default function CategoryItem(props: ICategory) {
   const { title, imageUrl } = props;
   return (
-    <div className="grid h-60 min-w-[30%] flex-auto place-items-center overflow-hidden border border-black hover:cursor-pointer">
+    <div className="grid h-60 w-full min-w-[30%] flex-auto place-items-center overflow-hidden border border-black hover:cursor-pointer sm:w-auto">
       <div
         className="col-start-1 row-start-1 h-full w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${imageUrl})` }}

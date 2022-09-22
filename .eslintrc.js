@@ -6,7 +6,6 @@ module.exports = {
     "react-app",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "plugin:tailwindcss/recommended",
   ],
   plugins: ["react", "prettier"],
   rules: {
