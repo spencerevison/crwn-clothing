@@ -11,9 +11,8 @@ export interface IDirectoryProps {
 }
 
 export default function Directory({ categories }: IDirectoryProps) {
-  console.log(categories);
   return (
-    <div>
+    <div className="flex w-full flex-wrap justify-between gap-4">
       {categories.map((category: ICategory) => (
         <CategoryItem key={category.id} {...category} />
       ))}
