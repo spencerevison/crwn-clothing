@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply block text-2xl font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply flex h-12 items-center justify-center border-black bg-black px-9 font-extrabold uppercase leading-10 tracking-wide text-white hover:border hover:bg-white hover:text-black;
+  }
+
+  .btn-inverted {
+    @apply border-black bg-white text-black hover:border-none hover:bg-black hover:text-white;
+  }
+
+  .btn-google {
+    @apply bg-google-100 text-white hover:border-none hover:bg-google-120;
+  }
+}

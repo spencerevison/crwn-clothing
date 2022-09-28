@@ -1,21 +1,20 @@
+import SignUpForm from "../components/SignUpForm";
 import {
   createUserDocumentFromAuth,
-  signInWithGoogle,
+  signInWithGooglePopup,
 } from "../utils/firebase/firebase.utils";
 
 export interface ISignInProps {}
 
 export default function SignIn(props: ISignInProps) {
   const logGoogleUser = async () => {
-    const { user } = await signInWithGoogle();
+    const { user } = await signInWithGooglePopup();
     const userDocRef = await createUserDocumentFromAuth(user);
-    console.log(userDocRef);
   };
 
   return (
     <div>
-      <h1>Sign In Page</h1>
-      <button onClick={logGoogleUser}>Sign in with Google Popup</button>
+      <SignUpForm />
     </div>
   );
 }

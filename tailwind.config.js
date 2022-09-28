@@ -5,7 +5,14 @@ module.exports = {
     fontFamily: {
       sans: ["Open Sans Condensed", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        google: {
+          100: "#4285f4",
+          120: "#357ae8",
+        },
+      },
+    },
   },
   plugins: [],
 };
