@@ -7,6 +7,7 @@ import {
   UserCredential,
   User,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
@@ -68,6 +69,19 @@ export const createAuthUserWithEmailAndPassword = async (
   password: string
 ): Promise<UserCredential> => {
   const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  return userCredential;
+};
+
+// Sign in with email and password
+export const signInAuthWithEmailAndPassword = async (
+  email: string,
+  password: string
+): Promise<UserCredential> => {
+  const userCredential = await signInWithEmailAndPassword(
     auth,
     email,
     password

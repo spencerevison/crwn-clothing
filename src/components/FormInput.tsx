@@ -8,7 +8,6 @@ export interface IFormInputProps {
 }
 
 export default function FormInput({ label, ...otherProps }: IFormInputProps) {
-  console.log(!!otherProps.value.length);
   return (
     <div className="group relative my-11">
       <label

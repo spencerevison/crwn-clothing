@@ -20,7 +20,7 @@ const defaultFormFields: IFormFields = {
   confirmPassword: "",
 };
 
-export default function SignUpForm() {
+export default function SignUpForm({ className }: { className?: string }) {
   const [formFields, setFormFields] = useState<IFormFields>(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
@@ -57,7 +57,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className="flex w-96 flex-col">
+    <div className={`${className} flex w-full flex-col`}>
       <h2 className="my-2">Don&apos;t have an account?</h2>
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -93,7 +93,7 @@ export default function SignUpForm() {
           name="confirmPassword"
           value={confirmPassword}
         />
-        <button className="btn" type="submit">
+        <button className="btn w-full md:w-[165px]" type="submit">
           Sign Up
         </button>
       </form>
