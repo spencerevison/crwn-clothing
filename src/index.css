@@ -14,7 +14,7 @@
   }
 
   .btn-inverted {
-    @apply border-black bg-white text-black hover:border-none hover:bg-black hover:text-white;
+    @apply border border-black bg-white text-black hover:border-none hover:bg-black hover:text-white;
   }
 
   .btn-google {
