@@ -1,14 +1,17 @@
 import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as CrwnLogo } from "../assets/crown.svg";
-import { ReactComponent as CartIcon } from "../assets/shopping-bag.svg";
+import CartIcon from "./CartIcon";
 import { UserContext } from "../contexts/user.context";
 import { signOutUser } from "../utils/firebase/firebase.utils";
+import CartDropdown from "./CartDropdown";
+import { CartContext } from "../contexts/cart.context";
 
 export interface INavigationProps {}
 
 export default function Navigation(props: INavigationProps) {
   const { currentUser } = useContext(UserContext);
+  const { hidden, toggleHidden } = useContext(CartContext);
 
   return (
     <>
@@ -30,9 +33,10 @@ export default function Navigation(props: INavigationProps) {
             </Link>
           )}
           <Link to="/shop">
-            <CartIcon />
+            <CartIcon onClick={toggleHidden} />
           </Link>
         </div>
+        <CartDropdown className={hidden ? "hidden" : ""} />
       </div>
       <Outlet />
     </>
