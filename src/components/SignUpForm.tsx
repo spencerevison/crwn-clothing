@@ -40,7 +40,6 @@ export default function SignUpForm({ className }: { className?: string }) {
         email,
         password
       );
-
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {

@@ -1,5 +1,7 @@
+import Shop from "../components/Shop";
+
 export interface IShopProps {}
 
-export default function Shop(props: IShopProps) {
-  return <div></div>;
+export default function ShopRoute(props: IShopProps) {
+  return <Shop />;
 }

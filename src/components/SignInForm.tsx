@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getErrorCode } from "../utils/error.utils";
 import {
   signInWithGooglePopup,
   signInAuthWithEmailAndPassword,
@@ -27,17 +28,25 @@ export default function SignInForm({ className }: { className?: string }) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const { user } = await signInAuthWithEmailAndPassword(email, password);
-      console.log(user);
+      await signInAuthWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
-      reportError(error);
+      switch (getErrorCode(error)) {
+        case "auth/wrong-password":
+          alert("Wrong password");
+          break;
+        case "auth/user-not-found":
+          alert("User not found");
+          break;
+        default:
+          reportError(error);
+      }
     }
   };
 
   const signInWithGoogle = async () => {
     try {
-      const { user } = await signInWithGooglePopup();
+      await signInWithGooglePopup();
     } catch (error) {
       reportError(error);
     }
