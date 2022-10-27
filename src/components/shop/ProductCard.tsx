@@ -1,4 +1,6 @@
-import { Product } from "../data/products";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/cart.context";
+import { Product } from "../../data/products";
 
 export interface IProductCardProps {
   product: Product;
@@ -6,6 +8,12 @@ export interface IProductCardProps {
 
 export default function ProductCard({ product }: IProductCardProps) {
   const { name, price, imageUrl } = product;
+  const { addProductToCart } = useContext(CartContext);
+
+  const addToCart = () => {
+    addProductToCart(product);
+  };
+
   return (
     <div className="group relative grid flex-col items-center">
       <img
@@ -17,7 +25,10 @@ export default function ProductCard({ product }: IProductCardProps) {
         <span className="">{name}</span>
         <span className="">{price}</span>
       </div>
-      <button className="btn btn-inverted z-10 col-start-1 row-start-1 mx-8 mb-8 self-end opacity-0 transition-opacity group-hover:opacity-100">
+      <button
+        className="btn btn-inverted z-10 col-start-1 row-start-1 mx-8 mb-8 self-end opacity-0 transition-opacity group-hover:opacity-100"
+        onClick={addToCart}
+      >
         Add to cart
       </button>
     </div>

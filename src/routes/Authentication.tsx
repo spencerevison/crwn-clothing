@@ -1,5 +1,5 @@
-import SignInForm from "../components/SignInForm";
-import SignUpForm from "../components/SignUpForm";
+import SignInForm from "../components/auth/SignInForm";
+import SignUpForm from "../components/auth/SignUpForm";
 
 export interface ISignInProps {}
 

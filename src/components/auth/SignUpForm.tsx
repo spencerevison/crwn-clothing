@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { getErrorCode } from "../utils/error.utils";
+import { getErrorCode } from "../../utils/error.utils";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
-} from "../utils/firebase/firebase.utils";
+} from "../../utils/firebase/firebase.utils";
 import FormInput from "./FormInput";
 
 export interface IFormFields {

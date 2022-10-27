@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as CrwnLogo } from "../assets/crown.svg";
-import CartIcon from "./CartIcon";
+import CartIcon from "./cart/CartIcon";
 import { UserContext } from "../contexts/user.context";
 import { signOutUser } from "../utils/firebase/firebase.utils";
-import CartDropdown from "./CartDropdown";
+import CartDropdown from "./cart/CartDropdown";
 import { CartContext } from "../contexts/cart.context";
 
 export interface INavigationProps {}
@@ -36,7 +36,7 @@ export default function Navigation(props: INavigationProps) {
             <CartIcon onClick={toggleCartOpen} />
           </Link>
         </div>
-        <CartDropdown className={isCartOpen ? "hidden" : ""} />
+        <CartDropdown className={isCartOpen ? "" : "hidden"} />
       </div>
       <Outlet />
     </>

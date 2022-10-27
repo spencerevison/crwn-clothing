@@ -1,4 +1,4 @@
-import Directory from "../components/Directory";
+import Directory from "../components/shop/Directory";
 
 export default function Home() {
   const categories = [
