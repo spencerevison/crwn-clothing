@@ -2,15 +2,15 @@ import { createContext, useState } from "react";
 
 // Store the context value
 export const CartContext = createContext({
-  hidden: true,
-  toggleHidden: () => {},
+  isCartOpen: true,
+  toggleCartOpen: () => {},
 });
 
 // Create the provider component
 export const CartProvider = ({ children }: { children: JSX.Element }) => {
-  const [hidden, setHidden] = useState(false);
-  const toggleHidden = () => setHidden(!hidden);
-  const value = { hidden, toggleHidden };
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const toggleCartOpen = () => setIsCartOpen(!isCartOpen);
+  const value = { isCartOpen, toggleCartOpen };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

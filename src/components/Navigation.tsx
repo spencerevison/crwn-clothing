@@ -11,7 +11,7 @@ export interface INavigationProps {}
 
 export default function Navigation(props: INavigationProps) {
   const { currentUser } = useContext(UserContext);
-  const { hidden, toggleHidden } = useContext(CartContext);
+  const { isCartOpen, toggleCartOpen } = useContext(CartContext);
 
   return (
     <>
@@ -33,10 +33,10 @@ export default function Navigation(props: INavigationProps) {
             </Link>
           )}
           <Link to="/shop">
-            <CartIcon onClick={toggleHidden} />
+            <CartIcon onClick={toggleCartOpen} />
           </Link>
         </div>
-        <CartDropdown className={hidden ? "hidden" : ""} />
+        <CartDropdown className={isCartOpen ? "hidden" : ""} />
       </div>
       <Outlet />
     </>
