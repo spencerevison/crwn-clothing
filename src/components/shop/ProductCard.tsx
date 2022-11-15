@@ -26,7 +26,7 @@ export default function ProductCard({ product }: IProductCardProps) {
         <span className="">{price}</span>
       </div>
       <button
-        className="btn btn-inverted z-10 col-start-1 row-start-1 mx-8 mb-8 self-end opacity-0 transition-opacity group-hover:opacity-100"
+        className="btn btn-inverted opacity-0-with-hover-support z-10 col-start-1 row-start-1 mx-8 mb-8 self-end transition-opacity group-hover:opacity-100"
         onClick={addToCart}
       >
         Add to cart

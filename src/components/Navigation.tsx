@@ -32,9 +32,7 @@ export default function Navigation(props: INavigationProps) {
               SIGN IN
             </Link>
           )}
-          <Link to="/shop">
-            <CartIcon onClick={toggleCartOpen} />
-          </Link>
+          <CartIcon onClick={toggleCartOpen} />
         </div>
         <CartDropdown className={isCartOpen ? "" : "hidden"} />
       </div>

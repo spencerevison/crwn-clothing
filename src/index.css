@@ -21,3 +21,11 @@
     @apply bg-google-100 text-white hover:border-none hover:bg-google-120 hover:text-white;
   }
 }
+
+@layer utilities {
+  @media (hover: hover) {
+    .opacity-0-with-hover-support {
+      opacity: 0;
+    }
+  }
+}
